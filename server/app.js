@@ -1,4 +1,4 @@
-SongsList = new Mongo.Collection('songs');
+SongsL = new Mongo.Collection('songs');
 
 songsarray = [];
 kb = [48,128,320];

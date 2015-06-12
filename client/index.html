@@ -1,0 +1,19 @@
+<head>
+    <title>MP3</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul>
+            {{#each songs}} {{> okay}} {{/each}}
+        </ul>
+    </div>
+</body>
+<template name="download">
+    <input type="text" id="quotename">
+    <button id="hitit">Submit</button>
+</template>
+<template name="okay">
+ <form action="{{linksong}}">
+    <li><input type="submit" value="Download {{kbps}} kbps" id = "{{kbps}}"></li></form>
+</template>

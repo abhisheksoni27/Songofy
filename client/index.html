@@ -3,6 +3,7 @@
 </head>
 
 <body>
+{{> download}}
     <div class="container">
         <ul>
             {{#each songs}} {{> okay}} {{/each}}
@@ -10,7 +11,7 @@
     </div>
 </body>
 <template name="download">
-    <input type="text" id="quotename">
+    <input type="text" id="songname">
     <button id="hitit">Submit</button>
 </template>
 <template name="okay">

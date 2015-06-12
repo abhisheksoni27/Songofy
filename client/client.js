@@ -1,7 +1,24 @@
 SongsList = new Mongo.Collection('songs');
+SearchTerm = new Mongo.Collection('search');
+
+console.log(this.userId);
 clicked = [];
 var delay = 1000; //1 seconds
+Meteor.subscribe("search");
+Meteor.subscribe("songs");
+Template.download.events({
+    'click button': function() {
 
+        var inputterm = document.getElementById("songname").value;
+        if (inputterm !== null) {
+            SearchTerm.insert({
+                sub: inputterm
+                
+            });
+        }
+        Meteor.call('searchsong');
+    }
+});
 
 Template.body.helpers({
 
@@ -12,12 +29,12 @@ Template.body.helpers({
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('click', function() {
     if (clicked !== null) {
         clicked[0] = document.getElementById("48");
         clicked[1] = document.getElementById("128");
         clicked[2] = document.getElementById("320");
-        console.log(clicked);
+       
 
         if (clicked[0]) {
             clicked[0].addEventListener('click', function() {
@@ -48,4 +65,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-});
+
+}, false);

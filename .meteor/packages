@@ -8,3 +8,6 @@ meteor-platform
 npm-container
 meteorhacks:npm
 froatsnook:request
+
+accounts-ui
+accounts-password
